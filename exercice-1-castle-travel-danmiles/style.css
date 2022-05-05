@@ -1,0 +1,414 @@
+/**
+ * style.css - Style principal de la page
+ */
+
+/**
+ * Polices
+ */
+
+/* Moon Dance */
+@font-face {
+    font-family: "Moon Dance";
+    src: url("assets/fonts/Moon_Dance/MoonDance-Regular.ttf");
+}
+
+/* Poppins */
+@font-face {
+    font-family: "Poppins";
+    src: url("assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("assets/fonts/Poppins/Poppins-Light.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("assets/fonts/Poppins/Poppins-Bold.ttf");
+    font-weight: bold;
+}
+
+/* A FAIRE: Implémenter le style de la page selon la maquette */
+
+/* ======================== Global START ======================== */
+:root {
+    --main-color: #ecd537;
+    --text-color: #1f1f1f;
+    --link-color: #ffffff;
+    --hover-color: #048804;
+    --navbar-gap: 40px;
+    --navbar-gap__responsive: 20px;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    min-width: 320px;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    background-color: #1d1818;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+ul li,
+ol li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    transition: all 0.3s ease;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.button {
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: white;
+    background-color: var(--hover-color);
+}
+
+.button:hover a {
+    color: white;
+}
+
+.fa-square-full {
+    font-size: 14px;
+    color: var(--main-color);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-xxl {
+    max-width: 1512px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.section__title {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;      
+}
+
+.section__title h2 {
+    font-size: 25px;
+    font-weight: bold;    
+    color: #ffffff;   
+    padding: 0 40px;
+    text-align: center;     
+}
+
+@media (max-width: 768px) {
+    .section__title h2 {
+        padding: 0 15px;        
+    }
+}
+
+
+
+/* ======================== Global END ======================== */
+
+/* ======================== Header START ======================== */
+.header {
+    margin-bottom: 50px;
+}
+
+.header__navbar {
+    min-height: 60px;
+    background-color: black;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.navbar .logo {
+    max-width: 150px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: var(--navbar-gap);
+}
+
+.navbar__item {
+    display: flex;
+    align-items: center;
+    gap: var(--navbar-gap);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px;
+    }
+    .navbar .logo {
+        margin-bottom: 20px;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: var(--navbar-gap__responsive);
+    }
+    .navbar__item {
+        flex-direction: column;
+        gap: var(--navbar-gap__responsive);
+    }
+}
+
+.header__content {
+    position: relative;
+    background: url("assets/images/altenstein-castle.jpg") no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header__content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.6;
+}
+
+@media (max-width: 1200px) {
+    .header__content {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__content {
+        min-height: 600px;
+    }
+}
+
+.header__title {
+    z-index: 1000;    
+    margin-bottom: 20px;
+}
+
+.header__title p {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.header__title h1 {
+    font-size: 80px;
+    font-family: "Moon Dance"; 
+    color: #ffffff;      
+}
+
+@media (max-width: 768px) {
+    .header__title p {
+        font-size: 18px;
+    }
+    .header__title h1 {
+        font-size: 65px;
+    }
+}
+
+/* ======================== Navbar END ======================== */
+
+/* ========================  Concept START ======================== */
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;    
+}
+
+@media (max-width: 1000px) {
+    .services {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .services {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+
+.services-item {    
+    background-color: #ffffff;
+    min-height: 300px;
+    border-radius: 10px;
+}
+
+.services-item__content {
+    display: flex;
+    flex-direction: column;       
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px; 
+    text-align: center;
+    padding: 15px;
+}    
+
+.services-item__content i {
+    font-size: 60px;
+    color: var(--text-color);
+}
+
+.services-item__content p {
+    font-size: 18px;
+}
+/* ========================  Concept END ======================== */
+
+/* ========================  Royal START  ======================== */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 40px;
+    column-gap: 30px;
+}
+
+.photo-gallery__item-7 {
+    grid-column: 3/5;
+}
+
+@media (max-width: 900px) {
+    .photo-gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .photo-gallery__item-7 {
+        grid-column: 1/4;        
+    }
+}  
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 25px;
+        column-gap: 15px;
+    }
+    .photo-gallery__item-7 {
+        grid-column: 1/3;        
+    }
+}
+
+@media (max-width: 600px) {
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        row-gap: 15px;        
+    }
+    .photo-gallery__item-7 {
+        grid-column: auto;        
+    }
+}
+/* ========================  Royal END ======================== */
+
+/* ========================  Footer START ======================== */
+
+.contact-us__info {       
+    display: flex;
+    justify-content: center;        
+}
+
+.contact-us__box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;    
+}
+
+.contact-us__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.contact-us__item i {
+    font-size: 30px;
+}
+
+.copy-right {
+    text-align: center;
+}
+
+
+/* ========================  Footer END ======================== */
